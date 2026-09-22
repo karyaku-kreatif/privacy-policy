@@ -3,227 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kebijakan Privasi - Karyaku Kreatif</title>
-    <meta name="description" content="Kebijakan Privasi dan Keamanan Data universal untuk semua aplikasi Karyaku Kreatif di Google Play Store.">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
+    <title>Kebijakan Privasi & Penghapusan Data - Karyaku Kreatif</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            600: '#2563eb',
-                            700: '#1d4ed8',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-color: #f8fafc;
-        }
-        .policy-content h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #0f172a;
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 0.5rem;
-        }
-        .policy-content h3 {
-            font-size: 1.125rem;
-            font-weight: 600;
-            color: #1e293b;
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-        }
-        .policy-content p {
-            margin-bottom: 1rem;
-            line-height: 1.75;
-            color: #334155;
-        }
-        .policy-content ul {
-            list-style-type: disc;
-            padding-left: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: #334155;
-            line-height: 1.75;
-        }
-        .policy-content li {
-            margin-bottom: 0.5rem;
-        }
-        .policy-content a {
-            color: #2563eb;
-            text-decoration: underline;
-        }
-        .policy-content a:hover {
-            color: #1d4ed8;
-        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
     </style>
 </head>
-<body class="text-slate-700 antialiased font-sans">
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
 
-    <header class="bg-white border-b border-slate-200 sticky top-0 z-10">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold text-xl">
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-blue-600 text-white font-bold flex items-center justify-center text-xl shadow-md shadow-blue-500/20">
                     K
                 </div>
                 <div>
-                    <h1 class="text-lg font-bold text-slate-900 leading-none">Karyaku Kreatif</h1>
-                    <span class="text-xs text-slate-500">Google Play Developer</span>
+                    <h1 class="font-bold text-slate-900 leading-tight">Karyaku Kreatif</h1>
+                    <p class="text-xs text-slate-500">Official Privacy Policy & Data Safety Hub</p>
                 </div>
             </div>
-            <nav class="hidden sm:flex gap-6 text-sm font-medium">
-                <a href="#pendahuluan" class="text-slate-600 hover:text-brand-600">Pendahuluan</a>
-                <a href="#hapus-data" class="text-slate-600 hover:text-brand-600">Penghapusan Data</a>
-                <a href="#kontak" class="text-slate-600 hover:text-brand-600">Kontak</a>
-            </nav>
+            <a href="#data-deletion" class="text-xs sm:text-sm font-semibold text-blue-600 hover:text-blue-700 bg-blue-50 px-3 py-2 rounded-lg transition">
+                Hapus Data / Account Deletion
+            </a>
         </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
-        
-        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-10 md:p-12 policy-content">
-            
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <span class="bg-brand-50 text-brand-700 px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase">Dokumen Legal Universal</span>
-                <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4 mb-3">Kebijakan Privasi</h1>
-                <p class="text-slate-500">Terakhir diperbarui: 22 September 2026</p>
-            </div>
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 flex-grow space-y-8">
 
-            <section id="pendahuluan">
-                <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-8 text-blue-900 rounded-r-lg">
-                    <strong>Pemberitahuan Universal:</strong> Kebijakan Privasi ini berlaku untuk <strong>seluruh aplikasi seluler (Layanan)</strong> yang dikembangkan, diterbitkan, dan dikelola oleh <strong>Karyaku Kreatif</strong> di platform Google Play Store.
+        <!-- Universal Policy Banner -->
+        <div class="bg-blue-600 text-white p-6 rounded-2xl shadow-lg shadow-blue-600/10">
+            <span class="inline-block bg-blue-500/40 text-blue-100 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-3">
+                Pemberitahuan Universal
+            </span>
+            <h2 class="text-xl sm:text-2xl font-bold mb-2">Kebijakan Privasi Universal Pengembang</h2>
+            <p class="text-blue-100 text-sm leading-relaxed">
+                Dokumen Kebijakan Privasi ini berlaku untuk <strong>seluruh aplikasi Android</strong> yang diterbitkan oleh <strong>Karyaku Kreatif</strong> di Google Play Store (termasuk <em>Kuis Pengetahuan Umum</em>, <em>Kuis Fisika</em>, <em>Kuis Matematika</em>, dan aplikasi lain yang dikembangkan di masa mendatang).
+            </p>
+            <p class="text-xs text-blue-200 mt-4 border-t border-blue-500/50 pt-3">
+                Terakhir Diperbarui: 22 September 2026
+            </p>
+        </div>
+
+        <!-- Document Body -->
+        <div class="bg-white p-6 sm:p-10 rounded-2xl border border-slate-200/80 shadow-sm space-y-8 text-slate-700 leading-relaxed text-sm sm:text-base">
+
+            <!-- 1. Pendahuluan -->
+            <section class="space-y-3">
+                <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-blue-600"></span> 1. Pendahuluan
+                </h3>
+                <p>
+                    Karyaku Kreatif ("kami") berkomitmen untuk melindungi privasi pengguna kami. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, menyimpan, dan melindungi informasi pribadi Anda saat menggunakan aplikasi mobile yang kami kembangkan.
+                </p>
+                <p>
+                    Dengan menginstal dan menggunakan aplikasi kami, Anda menyetujui praktik pengumpulan dan penggunaan informasi yang dijelaskan dalam kebijakan ini.
+                </p>
+            </section>
+
+            <!-- 2. Informasi yang Kami Kumpulkan & Google Sign-In -->
+            <section class="space-y-3">
+                <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-blue-600"></span> 2. Informasi yang Kami Kumpulkan
+                </h3>
+                <p>
+                    Aplikasi kami dapat mengumpulkan jenis informasi berikut untuk mendukung fungsionalitas utama aplikasi:
+                </p>
+                
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 my-3 space-y-3">
+                    <h4 class="font-semibold text-slate-900 text-sm sm:text-base">A. Autentikasi Pengguna (Google Sign-In)</h4>
+                    <p class="text-xs sm:text-sm text-slate-600">
+                        Aplikasi kami menyediakan fitur opsional/wajib berupa <strong>Login Google (Google Sign-In)</strong>. Saat Anda memilih untuk masuk menggunakan Akun Google Anda, kami mengumpulkan data profil dasar berikut dari Google API:
+                    </p>
+                    <ul class="list-disc pl-5 text-xs sm:text-sm text-slate-600 space-y-1">
+                        <li><strong>Nama Lengkap / Nama Tampilan (Display Name)</strong></li>
+                        <li><strong>Alamat Email (Email Address)</strong></li>
+                        <li><strong>ID Pengguna Unik Google (User ID / Sub ID)</strong></li>
+                    </ul>
                 </div>
 
-                <p>
-                    <strong>Karyaku Kreatif</strong> membangun berbagai aplikasi seluler sebagai aplikasi yang didukung iklan (Ad-Supported), Freemium, atau Gratis. Layanan ini disediakan oleh Karyaku Kreatif dan dimaksudkan untuk digunakan sebagaimana adanya.
-                </p>
-                <p>
-                    Halaman ini digunakan untuk memberi tahu pengunjung dan pengguna mengenai kebijakan kami terkait pengumpulan, penggunaan, dan pengungkapan Informasi Pribadi bagi siapa saja yang memutuskan untuk menggunakan Layanan (aplikasi) kami.
-                </p>
-                <p>
-                    Jika Anda memilih untuk menggunakan Layanan kami, maka Anda menyetujui pengumpulan dan penggunaan informasi yang terkait dengan kebijakan ini. Informasi Pribadi yang kami kumpulkan digunakan untuk menyediakan dan meningkatkan Layanan. Kami tidak akan menggunakan atau membagikan informasi Anda dengan siapa pun kecuali seperti yang dijelaskan dalam Kebijakan Privasi ini.
-                </p>
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 my-3 space-y-3">
+                    <h4 class="font-semibold text-slate-900 text-sm sm:text-base">B. Data Progres Aplikasi & Game</h4>
+                    <p class="text-xs sm:text-sm text-slate-600">
+                        Untuk memberikan pengalaman bermain yang berlanjut, kami menyimpan data operasional seperti:
+                    </p>
+                    <ul class="list-disc pl-5 text-xs sm:text-sm text-slate-600 space-y-1">
+                        <li>Riwayat skor, statistik jawaban, dan total poin pemain.</li>
+                        <li>Pencapaian (achievements) dan tingkat level permainan.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 my-3 space-y-3">
+                    <h4 class="font-semibold text-slate-900 text-sm sm:text-base">C. Informasi Perangkat & Diagnostik</h4>
+                    <p class="text-xs sm:text-sm text-slate-600">
+                        Layanan pihak ketiga kami (seperti Google Play Services dan AdMob) dapat secara otomatis mengumpulkan informasi teknis anonim, termasuk tipe perangkat, versi sistem operasi, dan Pengenal Iklan Android (Advertising ID).
+                    </p>
+                </div>
             </section>
 
-            <section id="pengumpulan-data">
-                <h2>1. Pengumpulan dan Penggunaan Informasi</h2>
-                <p>
-                    Secara umum, aplikasi kami <strong>tidak</strong> mewajibkan Anda untuk membuat akun atau memberikan data pengenal pribadi langsung (seperti nama, alamat fisik, atau nomor telepon) kecuali fitur tertentu di dalam aplikasi memintanya secara eksplisit.
-                </p>
-                <p>
-                    Namun, untuk pengalaman yang lebih baik, mengoptimalkan kinerja aplikasi, dan menyajikan iklan yang relevan, aplikasi kami menggunakan layanan pihak ketiga yang dapat mengumpulkan informasi yang dapat digunakan untuk mengidentifikasi perangkat Anda (seperti Advertising ID, IP Address, dan data analitik perangkat).
-                </p>
-                
-                <h3>Layanan Pihak Ketiga yang Digunakan</h3>
-                <p>Aplikasi kami mungkin menggunakan pustaka dan layanan pihak ketiga berikut. Tautan di bawah ini mengarah ke kebijakan privasi masing-masing penyedia layanan:</p>
-                <ul>
-                    <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Layanan Google Play (Google Play Services)</a></li>
-                    <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank" rel="noopener noreferrer">AdMob (Penyedia Iklan)</a></li>
-                    <li><a href="https://firebase.google.com/policies/analytics" target="_blank" rel="noopener noreferrer">Google Analytics for Firebase</a></li>
-                    <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase Crashlytics</a></li>
+            <!-- 3. Penggunaan Informasi -->
+            <section class="space-y-3">
+                <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-blue-600"></span> 3. Tujuan Penggunaan Informasi
+                </h3>
+                <p>Informasi yang kami kumpulkan digunakan secara eksklusif untuk tujuan berikut:</p>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li><strong>Fungsi Utama Aplikasi (App Functionality):</strong> Menghubungkan akun Anda, menyimpan riwayat skor, serta mensinkronisasikan progres poin kuis di seluruh perangkat Anda.</li>
+                    <li><strong>Pengelolaan Akun (Account Management):</strong> Mengidentifikasi identitas pengguna agar akun dan poin tidak tertukar atau hilang saat berpindah perangkat.</li>
+                    <li><strong>Menampilkan Iklan:</strong> Menyajikan iklan non-personal atau personal yang relevan melalui platform Google AdMob.</li>
+                    <li><strong>Peningkatan Kualitas:</strong> Memantau performa aplikasi dan memperbaiki error atau kendala teknis (bugs).</li>
                 </ul>
             </section>
 
-            <section id="data-log">
-                <h2>2. Data Log (Data Kerusakan)</h2>
+            <!-- 4. Layanan Pihak Ketiga -->
+            <section class="space-y-3">
+                <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-blue-600"></span> 4. Layanan Pihak Ketiga (Third-Party Services)
+                </h3>
                 <p>
-                    Kami ingin memberi tahu Anda bahwa setiap kali Anda menggunakan Layanan kami, jika terjadi kesalahan atau <em>crash</em> pada aplikasi, kami mengumpulkan data dan informasi (melalui produk pihak ketiga seperti Firebase Crashlytics) di ponsel Anda yang disebut Data Log.
+                    Aplikasi kami terintegrasi dengan layanan pihak ketiga resmi dari Google yang memiliki kebijakan privasi tersendiri:
                 </p>
-                <p>
-                    Data Log ini dapat mencakup informasi anonim seperti alamat Protokol Internet ("IP") perangkat Anda, nama perangkat, versi sistem operasi, konfigurasi aplikasi saat menggunakan Layanan kami, waktu dan tanggal penggunaan Layanan, dan statistik diagnostik lainnya yang murni digunakan untuk memperbaiki aplikasi.
-                </p>
-
-                <h2>3. Penggunaan Cookie</h2>
-                <p>
-                    Aplikasi perangkat seluler asli (native) umumnya tidak menggunakan "cookie" dengan cara yang sama seperti browser web. Namun, aplikasi mungkin menggunakan kode pihak ketiga dan <em>Software Development Kit (SDK)</em> yang menggunakan teknologi serupa cookie untuk mengumpulkan informasi guna meningkatkan layanan mereka (seperti melacak frekuensi tayangan iklan). Anda memiliki opsi untuk mereset identifier perangkat Anda melalui pengaturan sistem operasi ponsel Anda.
-                </p>
-            </section>
-
-            <section id="privasi-anak">
-                <h2>4. Privasi Anak-Anak (Kepatuhan COPPA)</h2>
-                <p>
-                    Sebagian besar Layanan kami ditujukan untuk audiens umum dan keluarga. Kami tidak secara sadar mengumpulkan informasi pengenal pribadi dari anak-anak di bawah usia 13 tahun. 
-                </p>
-                <p>
-                    Dalam kasus jika kami menemukan bahwa seorang anak di bawah 13 tahun telah memberikan kami informasi pribadi secara tidak sengaja, kami akan segera menghapusnya dari server atau layanan analitik kami. Jika Anda adalah orang tua atau wali dan Anda mengetahui bahwa anak Anda telah memberikan informasi pribadi kepada kami, silakan hubungi kami agar kami dapat mengambil tindakan yang diperlukan.
-                </p>
-            </section>
-
-            <section id="hapus-data">
-                <h2>5. Hak Pengguna & Kebijakan Penghapusan Data (Data Deletion)</h2>
-                <p>
-                    Sesuai dengan <strong>Kebijakan Keamanan Data Google Play</strong>, Anda memegang kendali atas data yang dihasilkan dari penggunaan aplikasi kami. Mengingat sebagian besar aplikasi kami beroperasi secara lokal dan menggunakan pihak ketiga untuk analitik, berikut adalah cara Anda dapat mengelola dan menghapus data Anda:
-                </p>
-                
-                <h3>A. Penghapusan Data Lokal Perangkat</h3>
-                <p>Data permainan, skor, pengaturan aplikasi, atau kemajuan pengguna disimpan secara lokal di perangkat Anda. Anda dapat menghapus data ini kapan saja dengan cara:</p>
-                <ul>
-                    <li>Membuka <strong>Pengaturan (Settings)</strong> pada perangkat Android Anda.</li>
-                    <li>Pilih menu <strong>Aplikasi (Apps)</strong> dan cari nama aplikasi kami.</li>
-                    <li>Pilih <strong>Penyimpanan (Storage)</strong>, lalu ketuk <strong>Hapus Data (Clear Data)</strong> atau <strong>Hapus Cache (Clear Cache)</strong>.</li>
-                    <li>Atau, Anda dapat melakukan <em>Uninstall</em> aplikasi, yang secara otomatis akan menghapus semua data lokal aplikasi tersebut dari perangkat Anda.</li>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li>
+                        <a href="https://policies.google.com/privacy" target="_blank" class="text-blue-600 hover:underline font-medium">Google Play Services & Google Sign-In</a>
+                    </li>
+                    <li>
+                        <a href="https://support.google.com/admob/answer/6128543?hl=id" target="_blank" class="text-blue-600 hover:underline font-medium">Google AdMob (Iklan)</a>
+                    </li>
+                    <li>
+                        <a href="https://firebase.google.com/support/privacy" target="_blank" class="text-blue-600 hover:underline font-medium">Firebase Analytics (Analitik Aplikasi)</a>
+                    </li>
                 </ul>
+            </section>
 
-                <h3>B. Penghapusan Data Iklan dan Analitik Pihak Ketiga</h3>
-                <p>Untuk berhenti membagikan data profil iklan atau mereset data identifikasi yang digunakan oleh jaringan iklan dan analitik:</p>
-                <ul>
-                    <li>Buka <strong>Pengaturan (Settings)</strong> perangkat Android Anda.</li>
-                    <li>Pilih <strong>Google</strong> > <strong>Iklan (Ads)</strong>.</li>
-                    <li>Ketuk <strong>Reset ID Iklan (Reset advertising ID)</strong> atau pilih <strong>Hapus ID Iklan (Delete advertising ID)</strong>.</li>
-                </ul>
-
-                <h3>C. Permintaan Penghapusan Data Lebih Lanjut</h3>
+            <!-- 5. Keamanan Data -->
+            <section class="space-y-3">
+                <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-blue-600"></span> 5. Keamanan Data & Enkripsi
+                </h3>
                 <p>
-                    Jika aplikasi kami memiliki fitur pendaftaran akun atau Anda ingin memastikan penghapusan data analitik yang mungkin dikaitkan dengan ID perangkat Anda di database layanan pihak ketiga kami, silakan ajukan permohonan melalui email. Kirimkan email ke alamat kontak kami dengan subjek <strong>"Permintaan Hapus Data"</strong> dan sertakan nama aplikasi beserta ID perangkat/ID Iklan Anda jika memungkinkan.
+                    Kami sangat menghargai kepercayaan Anda dalam memberikan Informasi Pribadi Anda kepada kami. Semua data yang ditransmisikan antara aplikasi dan server dikirimkan secara aman menggunakan protokol enkripsi standar industri (HTTPS / SSL).
                 </p>
             </section>
 
-            <section id="perubahan">
-                <h2>6. Perubahan pada Kebijakan Privasi Ini</h2>
+            <!-- 6. Kebijakan Penghapusan Data (Data Deletion Policy) - PENTING UNTUK PLAY CONSOLE -->
+            <section id="data-deletion" class="space-y-4 pt-4 border-t border-slate-200">
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 space-y-3">
+                    <h3 class="text-lg font-bold text-amber-900 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                        </svg>
+                        6. Hak Pengguna & Prosedur Penghapusan Data (Data Deletion)
+                    </h3>
+                    <p class="text-xs sm:text-sm text-amber-800">
+                        Sesuai dengan kebijakan Google Play Store, pengguna memiliki hak penuh untuk meminta penghapusan akun serta seluruh data pribadi yang terkait dengan aplikasi kami tanpa harus memasang kembali aplikasi.
+                    </p>
+                    
+                    <div class="bg-white p-4 rounded-lg border border-amber-200/60 space-y-3 text-xs sm:text-sm">
+                        <h4 class="font-bold text-slate-900">Cara Mengajukan Penghapusan Akun & Data:</h4>
+                        <ol class="list-decimal pl-5 space-y-2 text-slate-700">
+                            <li>
+                                Kirimkan email permohonan ke alamat email pengembang resmi kami: 
+                                <a href="mailto:karyakukreatif.dev@gmail.com" class="font-semibold text-blue-600 hover:underline">karyakukreatif.dev@gmail.com</a>.
+                            </li>
+                            <li>Gunakan subjek email: <strong>"Permohonan Penghapusan Data - [Nama Aplikasi]"</strong> (contoh: <em>Permohonan Penghapusan Data - Kuis Pengetahuan Umum</em>).</li>
+                            <li>Cantumkan <strong>Alamat Email Akun Google</strong> yang Anda gunakan untuk login di dalam aplikasi.</li>
+                        </ol>
+
+                        <h4 class="font-bold text-slate-900 pt-2">Data Yang Akan Dihapus Secara Permanen:</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-slate-700">
+                            <li>Profil pengguna (Nama, Email, dan ID Pengguna Google).</li>
+                            <li>Seluruh riwayat skor, poin, dan progres permainan.</li>
+                            <li>Catatan akun dari database server kami.</li>
+                        </ul>
+
+                        <h4 class="font-bold text-slate-900 pt-2">Waktu Pemrosesan & Retensi Data:</h4>
+                        <p class="text-slate-700">
+                            Proses penghapusan data akan diselesaikan dalam waktu maksimal <strong>7 hingga 14 hari kerja</strong> setelah permohonan diterima. Setelah diproses, seluruh data Anda akan dihapus secara permanen dan tidak dapat dipulihkan.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. Perlindungan Anak (COPPA) -->
+            <section class="space-y-3">
+                <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-blue-600"></span> 7. Privasi Anak-Anak
+                </h3>
                 <p>
-                    Kami berhak memperbarui Kebijakan Privasi ini dari waktu ke waktu untuk mencerminkan perubahan pada layanan kami atau regulasi platform. Oleh karena itu, Anda disarankan untuk meninjau halaman ini secara berkala untuk setiap perubahan. Perubahan akan berlaku segera setelah diposting di halaman ini.
+                    Aplikasi kami dirancang untuk audiens umum dan tidak secara sengaja mengumpulkan informasi pribadi dari anak-anak di bawah usia 13 tahun tanpa persetujuan orang tua. Jika Anda adalah orang tua atau wali dan mengetahui bahwa anak Anda telah memberikan informasi pribadi kepada kami, silakan hubungi kami agar kami dapat mengambil tindakan yang diperlukan.
                 </p>
             </section>
 
-            <section id="kontak">
-                <h2>7. Hubungi Kami</h2>
+            <!-- 8. Perubahan Kebijakan Privasi -->
+            <section class="space-y-3">
+                <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-blue-600"></span> 8. Perubahan Kebijakan Privasi
+                </h3>
                 <p>
-                    Jika Anda memiliki pertanyaan, saran, atau permintaan khusus terkait Kebijakan Privasi, Praktik Keamanan Data, atau Permintaan Penghapusan Data, jangan ragu untuk menghubungi tim pengembang kami di:
+                    Kami dapat memperbarui Kebijakan Privasi kami dari waktu ke waktu. Setiap perubahan akan dipublikasikan di halaman ini dengan tanggal pembaruan terbaru. Pengguna disarankan untuk meninjau halaman ini secara berkala.
                 </p>
-                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 inline-block mt-3 w-full sm:w-auto">
-                    <p class="font-semibold text-slate-800 m-0 mb-1">Email Pengembang (Developer Email):</p>
-                    <a href="mailto:karyakukreatif@gmail.com" class="text-brand-600 font-semibold text-lg flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                        karyakukreatif@gmail.com
-                    </a>
-                    <p class="text-sm text-slate-500 mt-2">Kami akan merespons permintaan privasi Anda dalam waktu maksimal 7 hari kerja.</p>
+            </section>
+
+            <!-- 9. Hubungi Kami -->
+            <section class="space-y-3 pt-4 border-t border-slate-200">
+                <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-blue-600"></span> 9. Hubungi Kami
+                </h3>
+                <p>
+                    Jika Anda memiliki pertanyaan, saran, atau permohonan terkait Kebijakan Privasi dan keamanan data ini, Anda dapat menghubungi kami melalui:
+                </p>
+                <div class="bg-blue-50/50 p-4 rounded-xl border border-blue-100 text-xs sm:text-sm space-y-1">
+                    <p><strong>Pengembang:</strong> Karyaku Kreatif</p>
+                    <p><strong>Email Dukungan:</strong> <a href="mailto:karyakukreatif@gmail.com" class="text-blue-600 hover:underline font-semibold">karyakukreatif@gmail.com</a></p>
+                    <p><strong>Lokasi:</strong> Indonesia</p>
                 </div>
             </section>
 
         </div>
     </main>
 
-    <footer class="bg-white border-t border-slate-200 mt-12 py-8 text-center text-slate-500 text-sm">
-        <div class="max-w-4xl mx-auto px-4">
-            <p>&copy; 2026 Karyaku Kreatif. Hak Cipta Dilindungi Undang-Undang.</p>
-            <p class="mt-2 text-xs">Halaman ini adalah dokumen resmi yang memenuhi persyaratan kebijakan privasi Google Play Console.</p>
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-6 border-t border-slate-800 text-center text-xs">
+        <div class="max-w-4xl mx-auto px-4 space-y-2">
+            <p>&copy; 2026 <strong>Karyaku Kreatif</strong>. Hak Cipta Dilindungi Undang-Undang.</p>
+            <p class="text-slate-500">
+                Dokumen ini memenuhi standar kepatuhan Google Play Console untuk Kebijakan Privasi & Keamanan Data (Data Safety).
+            </p>
         </div>
     </footer>
 
