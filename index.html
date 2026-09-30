@@ -40,10 +40,13 @@
             </span>
             <h2 class="text-xl sm:text-2xl font-bold mb-2">Kebijakan Privasi Universal Pengembang</h2>
             <p class="text-blue-100 text-sm leading-relaxed">
-                Dokumen Kebijakan Privasi ini berlaku untuk <strong>seluruh aplikasi Android</strong> yang diterbitkan oleh <strong>Karyaku Kreatif</strong> di Google Play Store (termasuk <em>Kuis Pengetahuan Umum</em>, <em>Kuis Fisika</em>, <em>Kuis Matematika</em>, dan aplikasi lain yang dikembangkan di masa mendatang).
+                Dokumen Kebijakan Privasi ini berlaku untuk <strong>seluruh aplikasi Android</strong> yang diterbitkan oleh <strong>Karyaku Kreatif</strong> di Google Play Store (termasuk <em>Kuis Pengetahuan Umum</em>, <em>Kuis Fisika</em>, <em>Kuis Matematika</em>, <em>Chat Recovery</em>, dan aplikasi lain yang dikembangkan di masa mendatang).
+            </p>
+            <p class="text-blue-100 text-sm leading-relaxed mt-3">
+                Pengguna <strong>Chat Recovery</strong>: aplikasi ini tidak memakai akun dan menyimpan data hanya di perangkat Anda. Rincian lengkap ada di <a href="#chat-recovery" class="underline font-semibold text-white">Lampiran A</a>.
             </p>
             <p class="text-xs text-blue-200 mt-4 border-t border-blue-500/50 pt-3">
-                Terakhir Diperbarui: 22 September 2026
+                Terakhir Diperbarui: 30 September 2026
             </p>
         </div>
 
@@ -160,6 +163,9 @@
                     <p class="text-xs sm:text-sm text-amber-800">
                         Sesuai dengan kebijakan Google Play Store, pengguna memiliki hak penuh untuk meminta penghapusan akun serta seluruh data pribadi yang terkait dengan aplikasi kami tanpa harus memasang kembali aplikasi.
                     </p>
+                    <p class="text-xs sm:text-sm text-amber-800">
+                        <strong>Chat Recovery</strong> tidak memiliki akun. Seluruh datanya ada di perangkat Anda dan dapat dihapus langsung dari dalam aplikasi atau dengan mencopot pemasangan aplikasi; lihat <a href="#chat-recovery-hapus" class="underline font-semibold">Lampiran A.5</a>.
+                    </p>
                     
                     <div class="bg-white p-4 rounded-lg border border-amber-200/60 space-y-3 text-xs sm:text-sm">
                         <h4 class="font-bold text-slate-900">Cara Mengajukan Penghapusan Akun & Data:</h4>
@@ -222,6 +228,114 @@
                 </div>
             </section>
 
+
+            <!-- LAMPIRAN A: Chat Recovery -->
+            <section id="chat-recovery" class="space-y-5 pt-6 border-t border-slate-200">
+                <div class="bg-blue-50/60 border border-blue-100 rounded-xl p-5 space-y-3">
+                    <h3 class="text-lg font-bold text-slate-900">Lampiran A: Kebijakan Privasi Aplikasi Chat Recovery</h3>
+                    <p class="text-xs sm:text-sm text-slate-600">Ringkasnya: pesan Anda hanya berada di perangkat Anda.</p>
+                    <ul class="list-disc pl-5 text-xs sm:text-sm text-slate-700 space-y-1">
+                        <li>Pesan dan media tidak dikirim ke server kami maupun pihak ketiga.</li>
+                        <li>Tidak ada akun. Aplikasi menampilkan iklan dari jaringan mitra (lihat A.4); isi pesan dan media Anda tidak pernah dibagikan kepada mereka.</li>
+                        <li>Hanya aplikasi yang Anda aktifkan yang dicatat, dan tidak ada yang dicatat sebelum Anda menyetujui layar pembuka.</li>
+                        <li>Semua data dapat dihapus kapan saja dari dalam aplikasi.</li>
+                    </ul>
+                </div>
+
+            <section class="space-y-3">
+                <h4 class="text-base sm:text-lg font-bold text-slate-900">A.1 Fungsi Aplikasi</h4>
+                <p>Chat Recovery (nama paket <code class="text-xs bg-slate-100 px-1 py-0.5 rounded">com.KaryakuKreatif.ChatRecovery</code>) membantu Anda melihat kembali pesan yang sudah diterima di perangkat Anda, termasuk pesan yang kemudian dihapus oleh pengirimnya. Aplikasi bekerja dengan membaca <strong>notifikasi pesan yang muncul di perangkat Anda sendiri</strong> dari aplikasi chat yang Anda aktifkan (WhatsApp dan WhatsApp Business secara bawaan; Telegram, Messenger, Instagram, Signal, LINE, Viber, Discord, WeChat, serta aplikasi SMS hanya bila Anda mengaktifkannya sendiri di Pengaturan). Aplikasi tidak dapat membaca pesan lama yang tidak pernah tampil sebagai notifikasi, dan tidak dapat mengakses akun chat Anda.</p>
+            </section>
+
+            <section class="space-y-3">
+                <h4 class="text-base sm:text-lg font-bold text-slate-900">A.2 Izin yang Digunakan dan Alasannya</h4>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li><strong>Akses Notifikasi (Notification Listener):</strong> fungsi inti, untuk membaca notifikasi pesan dari aplikasi chat yang Anda aktifkan. Izin ini hanya aktif setelah Anda menyetujuinya sendiri di pengaturan sistem Android dan dapat dicabut kapan saja.</li>
+                    <li><strong>Notifikasi (POST_NOTIFICATIONS):</strong> menampilkan status layanan dan peringatan ketika suatu pesan terdeteksi dihapus (dapat dimatikan di Pengaturan aplikasi).</li>
+                    <li><strong>Layanan latar depan (FOREGROUND_SERVICE, jenis specialUse):</strong> menjaga layanan pencatat pesan agar tidak dimatikan sistem. Selama berjalan, aplikasi menampilkan notifikasi tetap.</li>
+                    <li><strong>Jalankan saat perangkat menyala (RECEIVE_BOOT_COMPLETED):</strong> melanjutkan pencatatan setelah perangkat dihidupkan ulang atau aplikasi diperbarui.</li>
+                    <li><strong>Abaikan optimalisasi baterai (REQUEST_IGNORE_BATTERY_OPTIMIZATIONS):</strong> mencegah penghemat baterai menghentikan pencatatan. Bersifat permintaan; keputusan ada pada Anda.</li>
+                    <li><strong>Akses folder media (Storage Access Framework):</strong> hanya untuk folder media WhatsApp atau Telegram yang <em>Anda pilih sendiri</em>, agar file media yang baru diterima dapat disalin ke penyimpanan privat aplikasi. Aplikasi tidak meminta akses ke seluruh penyimpanan.</li>
+                    <li><strong>Internet, status jaringan, dan ID iklan (INTERNET, ACCESS_NETWORK_STATE, AD_ID):</strong> untuk pemeriksaan DNS pemblokir iklan dan untuk memuat iklan dari jaringan mitra (lihat A.4). Tidak digunakan untuk mengirim isi pesan atau media Anda.</li>
+                    <li>Aplikasi <strong>tidak</strong> meminta izin kontak, SMS, lokasi, kamera, mikrofon, maupun daftar panggilan.</li>
+                </ul>
+            </section>
+
+            <section class="space-y-3">
+                <h4 class="text-base sm:text-lg font-bold text-slate-900">A.3 Data yang Diproses</h4>
+                <p>Data berikut diproses dan disimpan <strong>di perangkat Anda</strong> untuk menjalankan fungsi aplikasi:</p>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li>Isi pesan, nama pengirim, nama obrolan/grup, waktu pesan, dan nama aplikasi asal, sebagaimana tampil pada notifikasi.</li>
+                    <li>Penanda apakah suatu pesan terdeteksi dihapus.</li>
+                    <li>File media (foto, video, pesan suara, dokumen, stiker) bila Anda memilih folder media, atau gambar pratinjau yang disertakan dalam notifikasi.</li>
+                    <li>Pengaturan aplikasi (aplikasi yang dipantau, lama penyimpanan, bahasa, folder yang dipilih, persetujuan Anda).</li>
+                    <li>Data teknis yang diproses oleh SDK iklan mitra saat iklan dimuat (lihat A.4); data ini terpisah dari isi pesan dan media Anda.</li>
+                </ul>
+                <p><strong>Catatan:</strong> jika Anda mengaktifkan aplikasi SMS, pesan yang muncul di notifikasi, termasuk kode verifikasi (OTP), ikut tersimpan di perangkat Anda. Aktifkan hanya bila Anda memerlukannya.</p>
+            </section>
+
+            <section class="space-y-3">
+                <h4 class="text-base sm:text-lg font-bold text-slate-900">A.4 Iklan, Mitra Iklan, dan Pembagian Data</h4>
+                <p><strong>Isi pesan dan media Anda tidak dikirim ke server kami maupun ke mitra iklan</strong>, tidak dijual, dan tidak dibagikan. Aplikasi tidak menyediakan akun atau Google Sign-In.</p>
+                <p>Chat Recovery menampilkan iklan banner dan iklan layar penuh (interstitial). Iklan dimuat secara berurutan dari jaringan mitra berikut sampai salah satunya berhasil: Google AdMob, Meta Audience Network, Unity LevelPlay (ironSource), Unity Ads, dan Start.io. Iklan layar penuh dibatasi frekuensinya dan tidak ditampilkan saat aplikasi baru dibuka.</p>
+                <p>Saat memuat dan menampilkan iklan, SDK mitra tersebut dapat mengumpulkan dan membagikan kepada mitranya: ID iklan (Advertising ID), alamat IP dan perkiraan lokasi dari IP, informasi perangkat dan sistem operasi, jenis koneksi, interaksi dengan iklan, serta data kinerja dan diagnostik. Data ini dipakai untuk menayangkan iklan, mengukur kinerja, mencegah kecurangan, dan, bila diizinkan, personalisasi iklan. Pemrosesan oleh masing-masing mitra tunduk pada kebijakan privasinya:</p>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li>Google AdMob: <a href="https://policies.google.com/technologies/ads" class="text-blue-600 hover:underline" rel="noopener">policies.google.com/technologies/ads</a></li>
+                    <li>Meta Audience Network: <a href="https://www.facebook.com/privacy/policy" class="text-blue-600 hover:underline" rel="noopener">facebook.com/privacy/policy</a></li>
+                    <li>Unity Ads dan Unity LevelPlay (ironSource): <a href="https://unity.com/legal/privacy-policy" class="text-blue-600 hover:underline" rel="noopener">unity.com/legal/privacy-policy</a></li>
+                    <li>Start.io: <a href="https://www.start.io/policy/privacy-policy" class="text-blue-600 hover:underline" rel="noopener">start.io/policy/privacy-policy</a></li>
+                </ul>
+                <p><strong>Persetujuan dan pilihan Anda.</strong> Di Wilayah Ekonomi Eropa, Inggris, dan Swiss, aplikasi menampilkan formulir persetujuan Google (UMP) sebelum iklan dimuat; di wilayah tersebut hanya Google AdMob yang digunakan, dan jaringan lain baru dipakai di wilayah tanpa kewajiban persetujuan. Bila persetujuan tidak diberikan, iklan tidak dimuat. Pengguna di wilayah tersebut dapat mengubah pilihannya melalui Pengaturan &gt; Pengaturan privasi iklan. Di seluruh dunia, Anda juga dapat mereset ID iklan atau menonaktifkan personalisasi iklan lewat pengaturan Google di perangkat Android Anda. Aplikasi tidak ditujukan untuk anak-anak dan tidak menayangkan iklan yang ditargetkan kepada anak-anak.</p>
+                <p><strong>Pemeriksaan DNS pemblokir iklan.</strong> Saat aplikasi dibuka, aplikasi melakukan pencarian DNS terhadap beberapa nama domain publik (<em>googleads.g.doubleclick.net</em>, <em>pagead2.googlesyndication.com</em>, <em>securepubads.g.doubleclick.net</em>, <em>adservice.google.com</em>, dan <em>connectivitycheck.gstatic.com</em>) untuk mengetahui apakah jaringan Anda memblokir domain iklan. Pencarian ini tidak membawa isi pesan, identitas, maupun data pribadi Anda. Seperti setiap koneksi internet, penyedia DNS yang Anda gunakan dapat melihat nama domain yang dicari.</p>
+            </section>
+
+            <section id="chat-recovery-hapus" class="space-y-3">
+                <h4 class="text-base sm:text-lg font-bold text-slate-900">A.5 Kontrol Anda dan Penghapusan Data</h4>
+                <p>Chat Recovery tidak memiliki akun, sehingga tidak ada data yang tersimpan di server kami untuk dihapus. Anda mengendalikan data di perangkat sendiri:</p>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li><strong>Hapus semua data:</strong> Pengaturan &gt; Lainnya &gt; Hapus semua data. Menghapus seluruh pesan dan file media yang tersimpan.</li>
+                    <li><strong>Hapus satu obrolan:</strong> tekan lama obrolan pada daftar Obrolan.</li>
+                    <li><strong>Hapus otomatis:</strong> atur penyimpanan riwayat 7, 30, atau 90 hari di Pengaturan.</li>
+                    <li><strong>Pilih aplikasi yang dipantau:</strong> matikan aplikasi yang tidak ingin dicatat.</li>
+                    <li><strong>Cabut akses:</strong> matikan Akses Notifikasi atau lepas folder media yang dipilih kapan saja.</li>
+                    <li><strong>Copot pemasangan aplikasi</strong> menghapus seluruh data aplikasi dari perangkat.</li>
+                    <li>Persetujuan Anda pada layar pembuka dapat ditinjau dengan menghapus data aplikasi atau memasang ulang.</li>
+                </ul>
+                <p>Bila Anda tetap ingin menghubungi kami terkait data, kirim email ke <a href="mailto:karyakukreatif@gmail.com" class="text-blue-600 hover:underline font-semibold">karyakukreatif@gmail.com</a> dengan subjek "Chat Recovery - Privasi".</p>
+            </section>
+
+            <section class="space-y-3">
+                <h4 class="text-base sm:text-lg font-bold text-slate-900">A.6 Penyimpanan, Keamanan, dan Cadangan</h4>
+                <p>Pesan disimpan dalam basis data lokal dan media dalam penyimpanan internal privat aplikasi, yang dilindungi oleh <em>sandbox</em> Android sehingga tidak dapat dibuka oleh aplikasi lain pada perangkat yang tidak dimodifikasi. Kami menyarankan Anda mengaktifkan kunci layar. Data aplikasi ini <strong>dikecualikan dari Cadangan Otomatis Google</strong> (Auto Backup), sehingga tidak ikut terunggah ke akun Google Anda. Konsekuensinya, data tidak dapat dipulihkan otomatis saat pindah perangkat. Pesan yang Anda buka atau bagikan ke aplikasi lain melalui tombol Buka/Bagikan sepenuhnya atas tindakan Anda sendiri.</p>
+            </section>
+
+            <section class="space-y-3">
+                <h4 class="text-base sm:text-lg font-bold text-slate-900">A.7 Pesan Pihak Lain, Tanggung Jawab Pengguna, dan Merek Dagang</h4>
+                <p>Pesan yang tersimpan berasal dari kontak Anda. Gunakan aplikasi ini hanya pada perangkat milik Anda sendiri, hanya untuk pesan yang Anda terima, dan sesuai hukum yang berlaku di tempat Anda. Aplikasi tidak dirancang untuk memantau perangkat atau percakapan orang lain tanpa sepengetahuan mereka. Chat Recovery adalah aplikasi independen dan <strong>tidak berafiliasi, disponsori, atau didukung</strong> oleh WhatsApp, Meta, Telegram, Signal, LINE, Viber, Discord, Tencent, Google, maupun pemilik merek lain yang disebut; seluruh nama dan merek adalah milik pemiliknya masing-masing. Fitur penanda "dihapus" bergantung pada perilaku notifikasi masing-masing aplikasi dan tidak dijamin akurat untuk semua aplikasi.</p>
+            </section>
+
+            <section class="space-y-3">
+                <h4 class="text-base sm:text-lg font-bold text-slate-900">A.8 Hubungan dengan Bagian Lain Dokumen Ini</h4>
+                <p>Bagian 2.A (Google Sign-In) dan 2.B (progres game) menjelaskan aplikasi kuis kami dan <strong>tidak berlaku untuk Chat Recovery</strong>. Iklan pada Chat Recovery diatur oleh Lampiran A.4 ini, bukan oleh Bagian 4. Bagian 7 (Privasi Anak-Anak), 8 (Perubahan Kebijakan), dan 9 (Hubungi Kami) berlaku untuk semua aplikasi. Bila jaringan iklan ditambah atau diganti, atau Chat Recovery menambahkan analitik atau pengiriman data lain, Lampiran ini akan diperbarui sebelum perubahan tersebut berlaku.</p>
+            </section>
+
+            <div class="pt-2">
+                <details class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+                    <summary class="cursor-pointer font-semibold text-slate-900">English summary of Appendix A (Chat Recovery)</summary>
+                    <div class="mt-3 space-y-3 text-sm text-slate-600">
+                        <p><strong>What it does.</strong> Chat Recovery (<code>com.KaryakuKreatif.ChatRecovery</code>) reads message notifications shown on your own device from the chat apps you enable (WhatsApp and WhatsApp Business by default; Telegram, Messenger, Instagram, Signal, LINE, Viber, Discord, WeChat and SMS apps only if you turn them on) and keeps a local copy, so you can still read messages the sender later deletes. It cannot read messages that never appeared as a notification and has no access to your chat accounts.</p>
+                        <p><strong>Data stays on your device.</strong> Message text, sender/chat names, timestamps, source app, and media (only from the WhatsApp/Telegram media folder you pick yourself, or the preview picture included in a notification) are stored locally. Message content and media are never uploaded, sold or shared. There is no account or sign-in. If you enable an SMS app, verification codes (OTP) shown in notifications are stored locally too.</p>
+                        <p><strong>Permissions.</strong> Notification access (core function, granted by you in system settings); post notifications (service status and deleted-message alerts); foreground service of type specialUse (keeps the recorder alive); boot completed (resume after restart); ignore battery optimizations (requested, your choice); user-selected folder access via the Storage Access Framework (no broad storage access); and INTERNET, network state and AD_ID, used for the ad-blocking DNS check and for loading ads. No contacts, SMS, location, camera or microphone permissions are requested.</p>
+                        <p><strong>Ads.</strong> The app shows banner and interstitial ads, loaded in turn from partner networks until one succeeds: Google AdMob, Meta Audience Network, Unity LevelPlay (ironSource), Unity Ads and Start.io. While loading and showing ads these SDKs may collect and share with their partners your advertising ID, IP address and approximate location derived from it, device and OS information, connection type, ad interactions, and performance and diagnostic data, for ad delivery, measurement, fraud prevention and, where permitted, personalization; each is governed by its own privacy policy (see the list in A.4 above). Message content and media are never shared with them. In the EEA, UK and Switzerland the Google consent form (UMP) is shown first, only Google AdMob is used there, and no ads load without consent; you can change your choice in Settings &gt; Ad privacy options. You can also reset your advertising ID or turn off ad personalization in your Android settings. The app is not directed to children.</p>
+                        <p><strong>DNS check.</strong> When the app opens it performs DNS lookups for a few public domains (googleads.g.doubleclick.net, pagead2.googlesyndication.com, securepubads.g.doubleclick.net, adservice.google.com, connectivitycheck.gstatic.com) to detect whether your network blocks ad domains. No message content or personal data is included; your DNS provider can see the domain names, as with any lookup.</p>
+                        <p><strong>Your controls and deletion.</strong> There is no server-side account, so there is nothing to delete on our servers. In the app: Settings &gt; Other &gt; Delete all data; long-press a chat to delete it; auto-delete after 7, 30 or 90 days; choose which apps are monitored; revoke notification access or the media folder at any time. Uninstalling the app removes all its data. A consent screen is shown on first launch and no message is recorded before you accept.</p>
+                        <p><strong>Security and backup.</strong> Data lives in the app's private storage protected by the Android sandbox, and is excluded from Google Auto Backup. Please use a screen lock.</p>
+                        <p><strong>Third-party messages and trademarks.</strong> Stored messages come from your contacts. Use the app only on your own device, only for messages you received, and in line with local law; it is not designed to monitor other people's devices. Chat Recovery is independent and is not affiliated with or endorsed by WhatsApp, Meta, Telegram, Signal, LINE, Viber, Discord, Tencent or Google. The "deleted" marker depends on each app's notification behavior and is not guaranteed.</p>
+                        <p><strong>Scope.</strong> Sections 2.A and 2.B of this document (Google Sign-In, game progress) describe our quiz apps and do not apply to Chat Recovery; ads in Chat Recovery are governed by this appendix (A.4), not Section 4. Contact: <a href="mailto:karyakukreatif@gmail.com" class="text-blue-600 hover:underline">karyakukreatif@gmail.com</a>.</p>
+                    </div>
+                </details>
+            </div>
+            </section>
         </div>
     </main>
 
